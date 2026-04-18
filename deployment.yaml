@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,8 +14,7 @@ spec:
         app: flask-api
     spec:
       containers:
-      - name: flask-api
-        image: flask-api:latest
-        ports:
-        - containerPort: 5000
-        # Pas de securityContext = tourne en root => Conftest va le rejeter
+        - name: flask-api
+          image: flask-api:latest
+          ports:
+            - containerPort: 5000
